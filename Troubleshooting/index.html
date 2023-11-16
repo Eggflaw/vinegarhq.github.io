@@ -139,6 +139,13 @@
                         <h1 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h1>
 <p>If there are any issues here that are undocumented, feel free to <a href="https://github.com/vinegarhq/vinegarhq.github.io/issues/new/choose">create an issue!</a></p>
 <hr />
+<h2 id="checking-avx-compatibility"><a class="header" href="#checking-avx-compatibility">Checking AVX Compatibility</a></h2>
+<p>There are 2 ways to check if your CPU supports AVX:</p>
+<ul>
+<li>Open up a terminal and type the following command: <code>grep avx /proc/cpuinfo</code> it will highlight with red the AVX flags, if you get no output it means that your current CPU doesn't support AVX.</li>
+<li>While having Vinegar installed type the following command: <code>vinegar sysinfo</code> or if using flatpak: <code>flatpak run io.github.vinegarhq.Vinegar sysinfo</code> it will show information about your system, this includes support for AVX.</li>
+</ul>
+<hr />
 <h2 id="general-issues"><a class="header" href="#general-issues">General Issues</a></h2>
 <p>Known Vinegar issues which affect both Roblox Player and Roblox Studio:</p>
 <ul>
