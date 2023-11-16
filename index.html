@@ -149,9 +149,26 @@
 <p>To get started, proceed to <a href="/Installation/index.html">the installation guide</a>!</p>
 <p>The Discord server for Vinegar can be found <a href="https://discord.gg/dzdzZ6Pps2">here</a>.</p>
 <h3 id="requirements"><a class="header" href="#requirements">Requirements</a></h3>
+<p><a href="https://en.help.roblox.com/hc/en-us/articles/203312800">Roblox's official minimum requirements</a> must be met. </p>
+<h4 id="roblox-player"><a class="header" href="#roblox-player">Roblox Player</a></h4>
 <ul>
-<li>X86-64 CPU with support for <a href="/Troubleshooting/index.html">AVX</a></li>
-<li>GPU that has atleast support for OpenGL 4.0 or Vulkan 1.1</li>
+<li>Processor: X86-64 CPU with <a href="/Troubleshooting/index.html#checking-avx-compatibility">AVX</a> support.</li>
+<li>Graphics: OpenGL 4.0 or Vulkan 1.1 support.</li>
+<li>Wine: At least Wine 8.0.
+<ul>
+<li>Depending on the version, the <a href="https://github.com/flathub/io.github.vinegarhq.Vinegar/blob/master/patches/wine/segregrevert.patch">segregrevert patch</a> might be required.</li>
+</ul>
+</li>
+</ul>
+<h4 id="roblox-studio"><a class="header" href="#roblox-studio">Roblox Studio</a></h4>
+<ul>
+<li>Processor: X86-64 CPU.</li>
+<li>Graphics: Vulkan 1.1 support.</li>
+<li>Wine: At least Wine 8.0.
+<ul>
+<li>The <a href="https://github.com/flathub/io.github.vinegarhq.Vinegar/blob/master/patches/wine/childwindow.patch">childwindow patch</a> is required for acceptable performance and stability.</li>
+</ul>
+</li>
 </ul>
 
                     </main>
