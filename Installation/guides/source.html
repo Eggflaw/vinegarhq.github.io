@@ -145,11 +145,9 @@
 <li>Gentoo: <code>net-libs/gnutls</code> via <code>ABI_X86=&quot;64 32&quot;</code>, refer to <a href="https://wiki.gentoo.org/wiki//etc/portage/package.use">Gentoo Wiki: package.use</a></li>
 </ul>
 <p>It is recommended to ensure that you have installed Wine 8.3 or above on your system, as Roblox requires a minimum version of 8.0 and may encounter stability issues under 8.3. </p>
-<h2 id="building-dependencies"><a class="header" href="#building-dependencies">Building Dependencies</a></h2>
-<p>You will need to install the dependencies needed by Gio. The documentation can be found <a href="https://gioui.org/doc/install/linux">here</a>
-You can disable the splash window provided by Vinegar (Which is implemented with Gio) by appending the <code>nosplash</code> build tag to the build parameters (<code>VINEGAR_GOFLAGS=--tags=nosplash</code>)</p>
 <h2 id="building-vinegar"><a class="header" href="#building-vinegar">Building Vinegar</a></h2>
 <p>To build Vinegar from source, you will need to install Go; it can be found packaged as <code>golang</code> or <code>go</code> on some Linux distributions.</p>
+<p>Aditionally will need to install the dependencies needed by Gio. The documentation can be found <a href="https://gioui.org/doc/install/linux">here</a>, However you are able to disable the splash window (which uses Gio) by appending the <code>nosplash</code> build tag to the build parameters (<code>VINEGAR_GOFLAGS=--tags=nosplash</code>).</p>
 <p>Clone Vinegar's git repository and build Vinegar:</p>
 <pre><code class="language-sh">$ git clone https://github.com/vinegarhq/vinegar
 $ cd vinegar
