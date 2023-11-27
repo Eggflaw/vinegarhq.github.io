@@ -140,7 +140,7 @@
 <p><strong>Warning</strong>: This guide is only recommended for advanced users. If facing issues, please follow <a href="./index.html">Troubleshooting</a> instructions first.</p>
 <p>Vinegar can be configured to help you determine whether a bug/issue is caused by Wine, so you can submit a report to WineHQ without violating their guidelines.</p>
 <p>To begin, create a new toml configuration file in an appropriate location, with the following content:</p>
-<pre><code class="language-toml"># Written for Vinegar v1.4.4.
+<pre><code class="language-toml"># Written for Vinegar v1.5.8.
 
 # WARNING: This should be left empty if your system has WineHQ packages installed (https://wiki.winehq.org/Download).
 # Otherwise, either install WineHQ packages or set wineroot to a staging/development wine's path.
@@ -152,33 +152,43 @@ wineroot = &quot;&quot;
 # (?)   = This option may be edited. In case of doubt, do not change.
 # (...) = User defined options can be added here (not recommended, may invalidate your report)
 
-dxvk_version = &quot;&quot;           # (X)
-multiple_instances = false  # (X)
-sanitize_env = false        # (X)
+dxvk_version = &quot;&quot;             # (X)
+multiple_instances = false    # (X)
+sanitize_env = false          # (X)
 
-[env]
-WINEDEBUG = &quot;&quot;              # (?): Use this to increase Wine log verbosity.
+[splash]
+enabled = false               # (X)
+
+[global.env]
+WINEDEBUG = &quot;&quot;                   # (?): Use this to increase Wine log verbosity.
+MESA_GL_VERSION_OVERRIDE = &quot;&quot;    # (?): OpenGL debugging
+__GL_THREADED_OPTIMIZATIONS = &quot;&quot; # (?): OpenGL debugging
 # (...)
-DXVK_LOG_PATH = &quot;&quot;          # (X)
-WINEESYNC = &quot;&quot;              # (X)
-WINEFSYNC = &quot;&quot;              # (X)
-WINEDLLOVERRIDES = &quot;&quot;       # (X)
+DXVK_LOG_LEVEL = &quot;&quot;              # (X)
+DXVK_LOG_PATH = &quot;&quot;               # (X)
+WINEESYNC = &quot;&quot;                   # (X)
+WINEFSYNC = &quot;&quot;                   # (X)
+WINEDLLOVERRIDES = &quot;&quot;            # (X)
 
 [player]
-channel = &quot;&quot;                # (?): Use this to debug a specific Roblox version.           
-forced_version = &quot;&quot;         # (?): Use this to debug a specific Roblox version.       
-renderer = &quot;D3D11&quot;          # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
-dxvk = false                # (X)
-auto_kill_prefix = false    # (X)
-launcher = &quot;&quot;               # (X)
+channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.           
+forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.       
+renderer = &quot;D3D11&quot;            # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
+dxvk = false                  # (X)
+auto_kill_prefix = false      # (X)
+launcher = &quot;&quot;                 # (X)
+gpu = &quot;&quot;                      # (X)
+discord_rpc = false           # (X)
 
 [studio]
-channel = &quot;&quot;                # (?): Use this to debug a specific Roblox version.           
-forced_version = &quot;&quot;         # (?): Use this to debug a specific Roblox version.       
-renderer = &quot;D3D11&quot;          # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
-dxvk = false                # (X)
-auto_kill_prefix = false    # (X)
-launcher = &quot;&quot;               # (X)
+channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.           
+forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.       
+renderer = &quot;D3D11&quot;            # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
+dxvk = false                  # (X)
+auto_kill_prefix = false      # (X)
+launcher = &quot;&quot;                 # (X)
+gpu = &quot;&quot;                      # (X)
+discord_rpc = false           # (X)
 
 [player.fflags]
 DFIntTaskSchedulerTargetFps = 60 # (X)
