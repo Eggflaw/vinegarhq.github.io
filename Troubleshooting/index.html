@@ -143,7 +143,7 @@
 <p>There are 2 ways to check if your CPU supports AVX:</p>
 <ul>
 <li>Open up a terminal and type the following command: <code>grep avx /proc/cpuinfo</code> it will highlight with red the AVX flags, if you get no output it means that your current CPU doesn't support AVX.</li>
-<li>While having Vinegar installed type the following command: <code>vinegar sysinfo</code> or if using flatpak: <code>flatpak run io.github.vinegarhq.Vinegar sysinfo</code> it will show information about your system, this includes support for AVX.</li>
+<li>While having Vinegar installed type the following command: <code>vinegar sysinfo</code> or if using flatpak: <code>flatpak run org.vinegarhq.Vinegar sysinfo</code> it will show information about your system, this includes support for AVX.</li>
 </ul>
 <h2 id="disabling-split-lock-detection"><a class="header" href="#disabling-split-lock-detection">Disabling Split Lock Detection</a></h2>
 <p>Currently, Roblox uses split lock operations. Unfortunately, <a href="https://lwn.net/Articles/790464/">this is not considered a good practice</a>, so by default, the Linux Kernel will throttle any programs that do so. This has been reported to have a major performance hit, sometimes reducing Roblox's frame rate to a mere fraction of what it's supposed to be.</p>
@@ -195,7 +195,7 @@ This may also be your GPU not supporting Vulkan or not supporting modern Vulkan;
 <p>There are 2 workarounds:</p>
 <ul>
 <li>
-<p>Using the <a href="https://vinegarhq.github.io/Installation/guides/flatpak.html">Vinegar flatpak</a>.</p>
+<p>Using the <a href="https://vinegarhq.org/Installation/guides/flatpak.html">Vinegar flatpak</a>.</p>
 </li>
 <li>
 <p>Using <a href="https://github.com/GloriousEggroll/wine-ge-custom/releases">Wine-GE</a> or a patched build of Wine with the above commit reverted.</p>
@@ -219,7 +219,7 @@ Some users have reported that creating a <a href="https://github.com/umlaeute/v4
 <p>This issue is most commonly caused by the Wine build not having the Vulkan ChildWindow patch applied. There are a couple solutions:</p>
 <ul>
 <li>
-<p>Using the <a href="https://vinegarhq.github.io/Installation/guides/flatpak.html">Vinegar flatpak</a>, which includes the ChildWindow patch;</p>
+<p>Using the <a href="https://vinegarhq.org/Installation/guides/flatpak.html">Vinegar flatpak</a>, which includes the ChildWindow patch;</p>
 </li>
 <li>
 <p>Using a Wine build that has the ChildWindow patch enabled (such as <a href="https://github.com/GloriousEggroll/wine-ge-custom">Wine GE</a>);</p>

@@ -144,7 +144,7 @@
 <h2 id="editing-the-configuration"><a class="header" href="#editing-the-configuration">Editing the configuration</a></h2>
 <p>Anything added to the configuration file is an override over the default configuration.</p>
 <p>The configuration file (<code>config.toml</code>) may be easily edited by running the <code>vinegar edit</code> command. By using the <code>edit</code> command, error validation is also included.</p>
-<p>If using Flatpak, the command is <code>flatpak run io.github.vinegarhq.Vinegar edit</code>.</p>
+<p>If using Flatpak, the command is <code>flatpak run org.vinegarhq.Vinegar edit</code>.</p>
 <p>If getting an error about an <code>EDITOR</code> variable, this can be temporarily fixed by running the command as <code>export EDITOR=nano; vinegar edit</code> (which will cause the <code>nano</code> editor to be used). Though, it is preferrable to set an <code>EDITOR</code> variable permanently, in a place like <code>.bashrc</code>.</p>
 <h2 id="configuration-values"><a class="header" href="#configuration-values">Configuration Values</a></h2>
 <table><thead><tr><th>Name</th><th>Description</th><th>Default</th></tr></thead><tbody>
@@ -153,7 +153,7 @@
 <tr><td><code>multiple_instances</code></td><td>allow for multiple instances of Roblox to be running simultaneously; see notes about ESYNC</td><td><code>false</code></td></tr>
 <tr><td><code>sanitize_env</code></td><td>sanitize the global environment, hand-picked variables are allowed through.</td><td><code>false</code></td></tr>
 </tbody></table>
-<p>If you're using the Flatpak, ensure that the path of the <code>wineroot</code> configuration option is allowed access from the Flatpak, as if it is a path outside of <code>~/.var/app/io.github.vinegarhq.Vinegar</code> Vinegar won't be able to access the directory: <code>flatpak override --user --filesystem=/path/to/wineroot</code></p>
+<p>If you're using the Flatpak, ensure that the path of the <code>wineroot</code> configuration option is allowed access from the Flatpak, as if it is a path outside of <code>~/.var/app/org.vinegarhq.Vinegar</code> Vinegar won't be able to access the directory: <code>flatpak override --user --filesystem=/path/to/wineroot</code></p>
 <table><thead><tr><th>Section</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>[global]</code></td><td>The global binary configuration for both Player and Studio, either can override, but FFlags and Environment are appended.</td></tr>
 <tr><td><code>[player]</code></td><td>Binary configuration for Player</td></tr>
