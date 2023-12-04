@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Home - Vinegar</title>
+        <title>Requirements - Vinegar</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The documentation of the Vinegar project, which makes Roblox on Linux more convenient.">
@@ -74,7 +74,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Home/index.html" class="active"><strong aria-hidden="true">1.</strong> Home</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Home/faq.html"><strong aria-hidden="true">1.1.</strong> FAQ</a></li></ol></li><li class="chapter-item expanded "><a href="../Requirements/index.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../Installation/index.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Installation/guides/flatpak.html"><strong aria-hidden="true">3.1.</strong> Installing from Flatpak</a></li><li class="chapter-item expanded "><a href="../Installation/guides/package.html"><strong aria-hidden="true">3.2.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../Installation/guides/source.html"><strong aria-hidden="true">3.3.</strong> Installing from source</a></li></ol></li><li class="chapter-item expanded "><a href="../Configuration/index.html"><strong aria-hidden="true">4.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">4.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../Contributing/index.html"><strong aria-hidden="true">5.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="../Troubleshooting/index.html"><strong aria-hidden="true">6.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Troubleshooting/winehq.html"><strong aria-hidden="true">6.1.</strong> Reporting issues to WineHQ</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Home/faq.html"><strong aria-hidden="true">1.1.</strong> FAQ</a></li></ol></li><li class="chapter-item expanded "><a href="../Requirements/index.html" class="active"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../Installation/index.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Installation/guides/flatpak.html"><strong aria-hidden="true">3.1.</strong> Installing from Flatpak</a></li><li class="chapter-item expanded "><a href="../Installation/guides/package.html"><strong aria-hidden="true">3.2.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../Installation/guides/source.html"><strong aria-hidden="true">3.3.</strong> Installing from source</a></li></ol></li><li class="chapter-item expanded "><a href="../Configuration/index.html"><strong aria-hidden="true">4.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">4.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../Contributing/index.html"><strong aria-hidden="true">5.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="../Troubleshooting/index.html"><strong aria-hidden="true">6.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Troubleshooting/winehq.html"><strong aria-hidden="true">6.1.</strong> Reporting issues to WineHQ</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -109,7 +109,7 @@
                         <a href="https://github.com/vinegarhq/vinegar" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/vinegarhq/vinegarhq.github.io/edit/main/src/Home/index.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/vinegarhq/vinegarhq.github.io/edit/main/src/Requirements/index.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
@@ -136,25 +136,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p align="center">
-  <img style="max-width: 30%" src="/favicon.svg">
-</p>
-<h2 id="welcome-to-the-documentation-of-the-vinegar-project"><a class="header" href="#welcome-to-the-documentation-of-the-vinegar-project">Welcome to the documentation of the Vinegar project!</a></h2>
+                        <h1 id="requirements"><a class="header" href="#requirements">Requirements</a></h1>
+<p>Before using Vinegar, some requirements are required for your setup to run Roblox.</p>
+<p>Ensure your system meets <a href="https://en.help.roblox.com/hc/en-us/articles/203312800">Roblox's official minimum requirements</a>.</p>
+<h4 id="roblox-player"><a class="header" href="#roblox-player">Roblox Player</a></h4>
 <ul>
-<li>Vinegar is a fast, minimal, and robust bootstrapper for Roblox Player and Roblox Studio that has many ease-of-use features.</li>
-<li>The software and documentation are both open source, and can be accessed <a href="https://github.com/vinegarhq">on GitHub</a>.</li>
-<li>There is no graphical configuration interface for Vinegar at this time.</li>
-<li>Vinegar is an alternative to <a href="https://brinkervii.gitlab.io/grapejuice/">Grapejuice</a>, designed for advanced Linux users.</li>
+<li>Processor: X86-64 CPU with <a href="/Troubleshooting/index.html#checking-avx-compatibility">AVX</a> support.</li>
+<li>Graphics: OpenGL 4.0 or Vulkan 1.1 support.</li>
+<li>Wine: 8.0 and onwards.
+<ul>
+<li>The <a href="https://github.com/flathub/io.github.vinegarhq.Vinegar/blob/master/patches/wine/segregrevert.patch">segregrevert patch</a> is required starting Wine 8.16 and onwards, otherwise you will get the 'Memory dump' issue.</li>
 </ul>
-<p>The Discord server for Vinegar can be found <a href="https://discord.gg/dzdzZ6Pps2">here</a>.</p>
-<hr />
-<p><em>Roblox® is a registered Roblox Corporation trademark. VinegarHQ is not affiliated with Roblox Corporation.</em></p>
+</li>
+</ul>
+<h4 id="roblox-studio"><a class="header" href="#roblox-studio">Roblox Studio</a></h4>
+<ul>
+<li>Processor: X86-64 CPU.</li>
+<li>Graphics: Vulkan 1.1 support.</li>
+<li>Wine: 8.0 and onwards.
+<ul>
+<li>The <a href="https://github.com/flathub/io.github.vinegarhq.Vinegar/blob/master/patches/wine/childwindow.patch">childwindow patch</a> is required for optimal performance, stability and ease of use.</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="../Home/faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="../Home/faq.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Installation/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -163,7 +176,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="../Home/faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="../Home/faq.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Installation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
