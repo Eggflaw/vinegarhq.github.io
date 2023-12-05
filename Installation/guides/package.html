@@ -141,27 +141,27 @@
 <h3 id="arch-linux-and-derivatives-aur"><a class="header" href="#arch-linux-and-derivatives-aur">Arch Linux and derivatives (AUR)</a></h3>
 <p><a href="https://aur.archlinux.org/packages/vinegar"><img src="https://img.shields.io/aur/version/vinegar?label=AUR" alt="AUR Package" /></a></p>
 <p>To install Vinegar, run the following commands:</p>
-<pre><code class="language-sh">git clone https://aur.archlinux.org/vinegar.git
-cd vinegar
-makepkg -si
+<pre><code class="language-console">$ git clone https://aur.archlinux.org/vinegar.git
+$ cd vinegar
+$ makepkg -si
 </code></pre>
 <p>Alternatively install <code>vinegar</code> with an AUR helper.</p>
 <h3 id="fedora-copr"><a class="header" href="#fedora-copr">Fedora (COPR)</a></h3>
 <p><a href="https://copr.fedorainfracloud.org/coprs/thegu5/vinegar/"><img src="https://img.shields.io/badge/dynamic/json?color=50a4db&amp;label=Fedora%20COPR&amp;query=builds.latest.source_package.version&amp;url=https%3A%2F%2Fcopr.fedorainfracloud.org%2Fapi_3%2Fpackage%3Fownername%3Dthegu5%26projectname%3Dvinegar%26packagename%3Dvinegar%26with_latest_build%3DTrue" alt="COPR Package" /></a></p>
-<pre><code class="language-sh"># dnf copr enable thegu5/vinegar
+<pre><code class="language-console"># dnf copr enable thegu5/vinegar
 # dnf install vinegar
 </code></pre>
 <h3 id="gentoo"><a class="header" href="#gentoo">Gentoo</a></h3>
 <p><a href="https://github.com/vinegarhq/ebuild"><img src="https://img.shields.io/badge/Gentoo-ebuild-6e56af" alt="Gentoo Package" /></a></p>
 <p>Firstly, make sure the repository module for eselect is installed:</p>
-<pre><code class="language-sh">emerge app-eselect/eselect-repository
+<pre><code class="language-console"># emerge app-eselect/eselect-repository
 </code></pre>
 <p>Then you will need to add the Vinegar overlay:</p>
-<pre><code class="language-sh">eselect repository add &quot;vinegar&quot; git https://github.com/vinegarhq/ebuild.git
-emaint sync
+<pre><code class="language-console"># eselect repository add &quot;vinegar&quot; git https://github.com/vinegarhq/ebuild.git
+# emaint sync
 </code></pre>
 <p>And emerge the package:</p>
-<pre><code class="language-sh">emerge -av games-util/vinegar
+<pre><code class="language-console"># emerge -av games-util/vinegar
 </code></pre>
 <p>Alternatively, you can use the live ebuild by creating a <code>/etc/portage/package.accept_keywords/vinegar</code> file with the following content:</p>
 <pre><code>games-util/vinegar **
@@ -169,15 +169,15 @@ emaint sync
 <h3 id="alpine-linux"><a class="header" href="#alpine-linux">Alpine Linux</a></h3>
 <p><a href="https://pkgs.alpinelinux.org/package/edge/testing/x86_64/vinegar"><img src="https://repology.org/badge/version-for-repo/alpine_edge/vinegar.svg?header=Alpine%20Linux%20Edge" alt="Alpine Linux Edge" /></a></p>
 <p>Vinegar's Alpine package resides within the <a href="https://wiki.alpinelinux.org/wiki/Repositories#Edge">Edge testing repository</a>, see more on how to set it up <a href="https://wiki.alpinelinux.org/wiki/Repositories#Managing_repositories">here</a></p>
-<pre><code class="language-sh"># apk add vinegar
+<pre><code class="language-console"># apk add vinegar
 </code></pre>
 <h3 id="source-mage"><a class="header" href="#source-mage">Source Mage</a></h3>
 <p><a href="https://github.com/sourcemage/grimoire-z-rejected/tree/master/z-games/vinegar"><img src="https://img.shields.io/badge/Source%20Mage-spell-fe0000" alt="Source Mage Package" /></a></p>
 <p>First, make sure the games grimoire is added:</p>
-<pre><code class="language-sh">scribe add games
+<pre><code class="language-console"># scribe add games
 </code></pre>
 <p>Then, cast the spell:</p>
-<pre><code class="language-sh">cast vinegar
+<pre><code class="language-console"># cast vinegar
 </code></pre>
 <p>(Do note that on 64-bit systems, 32-bit wine and gnutls will have to be sourced elsewhere as there is no multilib support)</p>
 
