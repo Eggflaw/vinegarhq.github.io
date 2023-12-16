@@ -74,7 +74,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../Requirements/index.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../Installation/index.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Installation/guides/flatpak.html"><strong aria-hidden="true">3.1.</strong> Installing from Flatpak</a></li><li class="chapter-item expanded "><a href="../Installation/guides/package.html"><strong aria-hidden="true">3.2.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../Installation/guides/source.html"><strong aria-hidden="true">3.3.</strong> Installing from source</a></li><li class="chapter-item expanded "><a href="../Installation/guides/snap.html"><strong aria-hidden="true">3.4.</strong> Installing from Snap</a></li></ol></li><li class="chapter-item expanded "><a href="../Configuration/index.html"><strong aria-hidden="true">4.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">4.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../Troubleshooting/index.html"><strong aria-hidden="true">5.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Troubleshooting/winehq.html" class="active"><strong aria-hidden="true">5.1.</strong> Reporting issues to WineHQ</a></li></ol></li><li class="chapter-item expanded "><a href="../Contributing/index.html"><strong aria-hidden="true">6.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="../Home/faq.html"><strong aria-hidden="true">7.</strong> FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../Installation/index.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Installation/guides/package.html"><strong aria-hidden="true">2.1.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../Installation/guides/source.html"><strong aria-hidden="true">2.2.</strong> Installing from source</a></li><li class="chapter-item expanded "><a href="../Installation/guides/snap.html"><strong aria-hidden="true">2.3.</strong> Installing from Snap</a></li></ol></li><li class="chapter-item expanded "><a href="../Configuration/index.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">3.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../Troubleshooting/index.html"><strong aria-hidden="true">4.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Troubleshooting/winehq.html" class="active"><strong aria-hidden="true">4.1.</strong> Reporting issues to WineHQ</a></li></ol></li><li class="chapter-item expanded "><a href="../Home/faq.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../Contributing/index.html"><strong aria-hidden="true">6.</strong> Contributing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,10 +145,10 @@
 # WARNING: This should be left empty if your system has WineHQ packages installed (https://wiki.winehq.org/Download).
 # Otherwise, either install WineHQ packages or set wineroot to a staging/development wine's path.
 # TL;DR: Ensure Vinegar uses a staging/development wine, otherwise your report is INVALID.
-wineroot = &quot;&quot; 
+wineroot = &quot;&quot;
 
 # Symbols definition:
-# (X)   = DO NOT EDIT: This option should never be changed. (will invalidate all reports) 
+# (X)   = DO NOT EDIT: This option should never be changed. (will invalidate all reports)
 # (?)   = This option may be edited. In case of doubt, do not change.
 # (...) = User defined options can be added here (not recommended, may invalidate your report)
 
@@ -171,8 +171,8 @@ WINEFSYNC = &quot;&quot;                   # (X)
 WINEDLLOVERRIDES = &quot;&quot;            # (X)
 
 [player]
-channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.           
-forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.       
+channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.
+forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.
 renderer = &quot;D3D11&quot;            # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
 dxvk = false                  # (X)
 auto_kill_prefix = false      # (X)
@@ -181,8 +181,8 @@ gpu = &quot;&quot;                      # (X)
 discord_rpc = false           # (X)
 
 [studio]
-channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.           
-forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.       
+channel = &quot;&quot;                  # (?): Use this to debug a specific Roblox version.
+forced_version = &quot;&quot;           # (?): Use this to debug a specific Roblox version.
 renderer = &quot;D3D11&quot;            # (?): Use this to debug a specific renderer. (D3D11 will use Wine's built-in D3D opengl conversion.)
 dxvk = false                  # (X)
 auto_kill_prefix = false      # (X)
@@ -195,7 +195,7 @@ DFIntTaskSchedulerTargetFps = 60 # (X)
 </code></pre>
 <p>Read over every option carefully and follow the instructions in the comments.</p>
 <p><strong>Critical</strong>: This configuration file depends heavily on your Vinegar version! <u>Do <strong>NOT</strong> reuse it</u>, especially after updating Vinegar. Recheck this guide to ensure you have the latest version of the configuration.</p>
-<p>Once the file is ready, set the <code>WINEPREFIX</code> env var to a temporary location, then run Vinegar with the <code>-config (filepath)</code> flag to use the cfg you just created. </p>
+<p>Once the file is ready, set the <code>WINEPREFIX</code> env var to a temporary location, then run Vinegar with the <code>-config (filepath)</code> flag to use the cfg you just created.</p>
 <p>The command should be similar to this if all steps were followed correctly: <code>WINEPREFIX=/tmp/report vinegar -config /home/jrelvas/Documents/winehq-report.toml player</code>.</p>
 <p>Caveat: Your desktop entries will obviously not be affected by this, preventing you from logging into studio or executing actions from roblox.com properly. You will have to edit them to reflect the changes above.</p>
 <p><strong>Warning</strong>: Keep in mind that any issues you face while following these steps are unsupported and should not be reported to us.</p>
@@ -207,7 +207,7 @@ DFIntTaskSchedulerTargetFps = 60 # (X)
                             <a rel="prev" href="../Troubleshooting/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../Contributing/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../Home/faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -219,7 +219,7 @@ DFIntTaskSchedulerTargetFps = 60 # (X)
                     <a rel="prev" href="../Troubleshooting/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../Contributing/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../Home/faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -74,7 +74,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../../Requirements/index.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../../Installation/index.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Installation/guides/flatpak.html"><strong aria-hidden="true">3.1.</strong> Installing from Flatpak</a></li><li class="chapter-item expanded "><a href="../../Installation/guides/package.html" class="active"><strong aria-hidden="true">3.2.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../../Installation/guides/source.html"><strong aria-hidden="true">3.3.</strong> Installing from source</a></li><li class="chapter-item expanded "><a href="../../Installation/guides/snap.html"><strong aria-hidden="true">3.4.</strong> Installing from Snap</a></li></ol></li><li class="chapter-item expanded "><a href="../../Configuration/index.html"><strong aria-hidden="true">4.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">4.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../../Troubleshooting/index.html"><strong aria-hidden="true">5.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Troubleshooting/winehq.html"><strong aria-hidden="true">5.1.</strong> Reporting issues to WineHQ</a></li></ol></li><li class="chapter-item expanded "><a href="../../Contributing/index.html"><strong aria-hidden="true">6.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="../../Home/faq.html"><strong aria-hidden="true">7.</strong> FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../../Installation/index.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Installation/guides/package.html" class="active"><strong aria-hidden="true">2.1.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../../Installation/guides/source.html"><strong aria-hidden="true">2.2.</strong> Installing from source</a></li><li class="chapter-item expanded "><a href="../../Installation/guides/snap.html"><strong aria-hidden="true">2.3.</strong> Installing from Snap</a></li></ol></li><li class="chapter-item expanded "><a href="../../Configuration/index.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">3.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../../Troubleshooting/index.html"><strong aria-hidden="true">4.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Troubleshooting/winehq.html"><strong aria-hidden="true">4.1.</strong> Reporting issues to WineHQ</a></li></ol></li><li class="chapter-item expanded "><a href="../../Home/faq.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../../Contributing/index.html"><strong aria-hidden="true">6.</strong> Contributing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,6 +137,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="installation-from-your-package-manager"><a class="header" href="#installation-from-your-package-manager">Installation from your package manager</a></h1>
+<div class="warning">
+<p><strong>Unless you have a good reason not to use it, it is strongly recommended to <a href="../index.html">install Vinegar using Flatpak</a>.</strong></p>
+<p>Running Vinegar and Roblox without Flatpak is prone to issues such as an incorrect Wine build, missing libraries, or improper configuration/installation.</p>
+<p>Configuring things properly is possible, but involves effort and debugging if Roblox doesn't work out of the box. That's why using Flatpak is recommended; it sets up and configures everything automatically, so it has the best chance of working smoothly the first time without needing any adjustments.</p>
+<p>Please verify that you pass the <a href="../index.html">minimum system requirements</a> before starting any installation.</p>
+</div>
 <p>The Vinegar community hosts a couple distribution-specific packages to make native installation easier.</p>
 <h3 id="arch-linux-and-derivatives-aur"><a class="header" href="#arch-linux-and-derivatives-aur">Arch Linux and derivatives (AUR)</a></h3>
 <p><a href="https://aur.archlinux.org/packages/vinegar"><img src="https://img.shields.io/aur/version/vinegar?label=AUR&amp;style=flat-square" alt="AUR Package" /></a></p>
@@ -168,24 +174,24 @@ $ makepkg -si
 </code></pre>
 <h3 id="alpine-linux"><a class="header" href="#alpine-linux">Alpine Linux</a></h3>
 <p><a href="https://pkgs.alpinelinux.org/package/edge/testing/x86_64/vinegar"><img src="https://repology.org/badge/version-for-repo/alpine_edge/vinegar.svg?header=Alpine%20Linux%20Edge&amp;style=flat-square" alt="Alpine Linux Edge" /></a></p>
-<p>Vinegar's Alpine package resides within the <a href="https://wiki.alpinelinux.org/wiki/Repositories#Edge">Edge testing repository</a>, see more on how to set it up <a href="https://wiki.alpinelinux.org/wiki/Repositories#Managing_repositories">here</a></p>
+<p>Vinegar's Alpine package resides within the <a href="https://wiki.alpinelinux.org/wiki/Repositories#Edge">Edge testing repository</a>. A guide on enabling the Edge repository is available: <a href="https://wiki.alpinelinux.org/wiki/Repositories#Managing_repositories%5D">Managing repositories - Alpine Linux wiki</a>.</p>
 <pre><code class="language-console"># apk add vinegar
 </code></pre>
 <h3 id="source-mage"><a class="header" href="#source-mage">Source Mage</a></h3>
 <p><a href="https://github.com/sourcemage/grimoire-z-rejected/tree/master/z-games/vinegar"><img src="https://img.shields.io/badge/Source%20Mage-spell-fe0000?style=flat-square" alt="Source Mage Package" /></a></p>
-<p>First, make sure the games grimoire is added:</p>
+<p>First, make sure the <code>games</code> grimoire is added:</p>
 <pre><code class="language-console"># scribe add games
 </code></pre>
 <p>Then, cast the spell:</p>
 <pre><code class="language-console"># cast vinegar
 </code></pre>
-<p>(Do note that on 64-bit systems, 32-bit wine and gnutls will have to be sourced elsewhere as there is no multilib support)</p>
+<p>(Do note that on 64-bit systems, 32-bit Wine will have to be sourced elsewhere as there is no multilib support)</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../Installation/guides/flatpak.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../Installation/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                             <a rel="next" href="../../Installation/guides/source.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -197,7 +203,7 @@ $ makepkg -si
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../Installation/guides/flatpak.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../Installation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <a rel="next" href="../../Installation/guides/source.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
