@@ -1,39 +1,45 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Configuration - Vinegar</title>
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="The documentation of the Vinegar project, which makes Roblox on Linux more convenient.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -49,50 +55,81 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded "><a href="../Home/index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../Installation/index.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Installation/guides/package.html"><strong aria-hidden="true">2.1.</strong> Installing from package</a></li><li class="chapter-item expanded "><a href="../Installation/guides/source.html"><strong aria-hidden="true">2.2.</strong> Installing from source</a></li><li class="chapter-item expanded "><a href="../Installation/guides/snap.html"><strong aria-hidden="true">2.3.</strong> Installing from Snap</a></li></ol></li><li class="chapter-item expanded "><a href="../Configuration/index.html" class="active"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Configuration/tips-and-tricks/index.html"><strong aria-hidden="true">3.1.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="../Troubleshooting/index.html"><strong aria-hidden="true">4.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Troubleshooting/winehq.html"><strong aria-hidden="true">4.1.</strong> Reporting issues to WineHQ</a></li></ol></li><li class="chapter-item expanded "><a href="../Home/faq.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../Contributing/index.html"><strong aria-hidden="true">6.</strong> Contributing</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -112,6 +149,7 @@
                         <a href="https://github.com/vinegarhq/vinegarhq.github.io/edit/main/src/Configuration/index.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -125,8 +163,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -147,23 +186,25 @@
 <p>If using Flatpak, the command is <code>flatpak run org.vinegarhq.Vinegar edit</code>.</p>
 <p>If getting an error about an <code>EDITOR</code> variable, this can be temporarily fixed by running the command as <code>export EDITOR=nano; vinegar edit</code> (which will cause the <code>nano</code> editor to be used). Though, it is preferrable to set an <code>EDITOR</code> variable permanently, in a place like <code>.bashrc</code>.</p>
 <h2 id="configuration-values"><a class="header" href="#configuration-values">Configuration Values</a></h2>
-<table><thead><tr><th>Name</th><th>Description</th><th>Default</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Description</th><th>Default</th></tr></thead><tbody>
 <tr><td><code>wineroot</code></td><td>the path to a valid Wine 'root' installation directory.</td><td>none</td></tr>
 <tr><td><code>dxvk_version</code></td><td>the DXVK version to be used; this can be set to legacy DXVK for old GPUs that don't support modern Vulkan.</td><td><code>&quot;2.3&quot;</code></td></tr>
 <tr><td><code>multiple_instances</code></td><td>allow for multiple instances of Roblox to be running simultaneously; see notes about ESYNC</td><td><code>false</code></td></tr>
 <tr><td><code>sanitize_env</code></td><td>sanitize the global environment, hand-picked variables are allowed through.</td><td><code>false</code></td></tr>
 </tbody></table>
+</div>
 <p>If you're using the Flatpak, ensure that the path of the <code>wineroot</code> configuration option is allowed access from the Flatpak, as if it is a path outside of <code>~/.var/app/org.vinegarhq.Vinegar</code> Vinegar won't be able to access the directory: <code>flatpak override --user --filesystem=/path/to/wineroot</code></p>
-<table><thead><tr><th>Section</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>[global]</code></td><td>The global binary configuration for both Player and Studio, either can override, but FFlags and Environment are appended.</td></tr>
 <tr><td><code>[player]</code></td><td>Binary configuration for Player</td></tr>
 <tr><td><code>[studio]</code></td><td>Binary configuration for Studio</td></tr>
 <tr><td><code>[env]</code></td><td>Global environment, this is similar to <code>[global.env]</code>.</td></tr>
 <tr><td><code>[splash]</code></td><td>Configuraton for the loading screen of Vinegar</td></tr>
 </tbody></table>
+</div>
 <h3 id="binary-configuration"><a class="header" href="#binary-configuration">Binary Configuration</a></h3>
 <p>This section are the available options for the global, Studio or Player configurations, they are specified under their sections as listed above.</p>
-<table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>the Roblox release channel</td><td><code>&quot;live&quot;</code></td></tr>
 <tr><td><code>launcher</code></td><td>the program that is used to launch Wine when launching Roblox; this can be set to <code>gamemoderun</code>.</td><td>none</td></tr>
 <tr><td><code>renderer</code></td><td>selects the rendering engine to be used by Roblox via FFlags.</td><td><code>&quot;D3D11&quot;</code></td></tr>
@@ -174,24 +215,27 @@
 <tr><td><code>gpu</code></td><td>the GPU which Vinegar should use for running Roblox, see below table for valid values.</td><td><code>&quot;prime-discrete&quot;</code></td></tr>
 <tr><td><code>gamemode</code></td><td>automatically enable gamemode via D-Bus desktop portals.</td><td><code>true</code></td></tr>
 </tbody></table>
+</div>
 <p>The renderer must be one of the following: <code>&quot;OpenGL&quot;</code>, <code>&quot;D3D11FL10&quot;</code>, <code>&quot;D3D11&quot;</code>, <code>&quot;Vulkan&quot;</code>;
 when using DXVK, ensure that the renderer is <code>&quot;D3D11&quot;</code>, otherwise Roblox will not utilize DXVK.</p>
 <p>Rich presence for Studio may not function correctly, as the BloxstrapRPC protocol had only been implemented for Player; keep in mind that Discord RPC includes telemetry by default.</p>
 <p>Sub-sections for FFlags and environment variables are specified with the section (eg. <code>[player.env]</code>)</p>
-<table><thead><tr><th>Sub-section</th><th>Default</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Sub-section</th><th>Default</th></tr></thead><tbody>
 <tr><td><code>[fflags]</code></td><td>Player: <code>DFIntTaskSchedulerTargetFps = 640</code></td></tr>
 <tr><td><code>[env]</code></td><td>none</td></tr>
 </tbody></table>
+</div>
 <p>Refer to the following table for valid <code>gpu</code> values:</p>
-<table><thead><tr><th>Value</th><th>Effect</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Value</th><th>Effect</th></tr></thead><tbody>
 <tr><td><code>&quot;prime-discrete&quot;</code></td><td>Runs Roblox with your discrete gpu.</td></tr>
 <tr><td><code>&quot;integrated&quot;</code></td><td>Runs Roblox with your integrated graphics.</td></tr>
 <tr><td><code>&quot;&quot;</code></td><td>Skip logic; leave gpu choice up to your Vulkan/OpenGL drivers. Vulkan typically chooses the fastest gpu in your system, while OpenGL chooses the default.</td></tr>
 <tr><td><code>&quot;&lt;int&gt;&quot;</code></td><td>Runs Roblox with the gpu corresponding to the given index.<br/>Use the <code>sysinfo</code> command to show a list of gpus in your system and their indexes.</td></tr>
 </tbody></table>
+</div>
 <p>On non-PRIME systems, <code>&quot;prime-discrete&quot;</code> and <code>&quot;integrated&quot;</code> have the same effect as <code>&quot;&quot;</code>.</p>
 <h3 id="splash-configuration"><a class="header" href="#splash-configuration">Splash Configuration</a></h3>
-<table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>Deterimes if the splash window appears or not</td><td><code>true</code></td></tr>
 <tr><td><code>background</code></td><td>background of the splash window</td><td><code>0x242424</code></td></tr>
 <tr><td><code>foreground</code></td><td>foreground of the text in the splash</td><td><code>0xfafafa</code></td></tr>
@@ -200,6 +244,7 @@ when using DXVK, ensure that the renderer is <code>&quot;D3D11&quot;</code>, oth
 <tr><td><code>Gray2</code></td><td>foreground color of the description</td><td><code>0x777777</code></td></tr>
 <tr><td><code>Accent</code></td><td>color of the 'Show Log' and progress bar</td><td><code>0x8fbc5e</code></td></tr>
 </tbody></table>
+</div>
 <p>The colors are in hexadecimal format, stored as numbers internally such as <code>0xff00ff</code>.</p>
 <h3 id="example-configuration"><a class="header" href="#example-configuration">Example configuration</a></h3>
 <blockquote>
@@ -235,9 +280,11 @@ renderer = &quot;OpenGL&quot;
                             <a rel="prev" href="../Installation/guides/snap.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../Configuration/tips-and-tricks/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+
+                            <a rel="next prefetch" href="../Configuration/tips-and-tricks/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -247,23 +294,33 @@ renderer = &quot;OpenGL&quot;
                     <a rel="prev" href="../Installation/guides/snap.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../Configuration/tips-and-tricks/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+
+                    <a rel="next prefetch" href="../Configuration/tips-and-tricks/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
+
+    </div>
     </body>
 </html>
