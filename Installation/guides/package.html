@@ -216,6 +216,19 @@ $ makepkg -si
 <p>Vinegar's Alpine package resides within the <a href="https://wiki.alpinelinux.org/wiki/Repositories#Edge">Edge testing repository</a>. A guide on enabling the Edge repository is available: <a href="https://wiki.alpinelinux.org/wiki/Repositories#Managing_repositories%5D">Managing repositories - Alpine Linux wiki</a>.</p>
 <pre><code class="language-console"># apk add vinegar
 </code></pre>
+<h3 id="nixos"><a class="header" href="#nixos">NixOS</a></h3>
+<p><a href="https://search.nixos.org/packages?channel=unstable&amp;show=vinegar"><img src="https://repology.org/badge/version-for-repo/nix_unstable/vinegar.svg?header=Nixpkgs%20Unstable%20Package&amp;style=flat-square" alt="Nixpkgs Unstable Package" /></a></p>
+<p>Vinegar's Nix package resides in the <a href="https://nixos.wiki/wiki/Nix_channels">Unstable repository</a>. It can be installed system-wide with <a href="https://search.nixos.org/options?show=environment.systemPackages"><code>environment.systemPackages</code></a>:</p>
+<pre><code class="language-nix">environment.systemPackages = [
+  pkgs.vinegar
+];
+</code></pre>
+<p>Or just for your user using <a href="https://search.nixos.org/options?show=home.programs"><code>home.programs</code></a>:</p>
+<pre><code class="language-nix">home.programs = [
+  pkgs.vinegar
+];
+</code></pre>
+<p>Testing in a temporary shell can also be done using <code>nix shell nixpkgs#vinegar</code></p>
 <h3 id="source-mage"><a class="header" href="#source-mage">Source Mage</a></h3>
 <p><a href="https://github.com/sourcemage/grimoire-z-rejected/tree/master/z-games/vinegar"><img src="https://img.shields.io/badge/Source%20Mage-spell-fe0000?style=flat-square" alt="Source Mage Package" /></a></p>
 <p>First, make sure the <code>games</code> grimoire is added:</p>
