@@ -195,15 +195,14 @@
 </div>
 <p>If you're using the Flatpak, ensure that the path of the <code>wineroot</code> configuration option is allowed access from the Flatpak, as if it is a path outside of <code>~/.var/app/org.vinegarhq.Vinegar</code> Vinegar won't be able to access the directory: <code>flatpak override --user --filesystem=/path/to/wineroot</code></p>
 <div class="table-wrapper"><table><thead><tr><th>Section</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>[global]</code></td><td>The global binary configuration for both Player and Studio, either can override, but FFlags and Environment are appended.</td></tr>
 <tr><td><code>[player]</code></td><td>Binary configuration for Player</td></tr>
 <tr><td><code>[studio]</code></td><td>Binary configuration for Studio</td></tr>
-<tr><td><code>[env]</code></td><td>Global environment, this is similar to <code>[global.env]</code>.</td></tr>
+<tr><td><code>[env]</code></td><td>Global environment</td></tr>
 <tr><td><code>[splash]</code></td><td>Configuraton for the loading screen of Vinegar</td></tr>
 </tbody></table>
 </div>
 <h3 id="binary-configuration"><a class="header" href="#binary-configuration">Binary Configuration</a></h3>
-<p>This section are the available options for the global, Studio or Player configurations, they are specified under their sections as listed above.</p>
+<p>This section are the available options for the Studio and Player configurations, they are specified under their sections as listed above.</p>
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>the Roblox release channel</td><td><code>&quot;live&quot;</code></td></tr>
 <tr><td><code>launcher</code></td><td>the program that is used to launch Wine when launching Roblox; this can be set to <code>gamemoderun</code>.</td><td>none</td></tr>
@@ -257,7 +256,7 @@ wineroot = &quot;/home/meow/wine-ge&quot;
 [env]
 WINEFSYNC = &quot;1&quot;
 
-[global]
+[player]
 launcher = &quot;gamemoderun&quot;
 dxvk = false
 renderer = &quot;Vulkan&quot;
