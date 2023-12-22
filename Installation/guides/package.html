@@ -198,8 +198,8 @@ $ makepkg -si
 </code></pre>
 <h3 id="gentoo"><a class="header" href="#gentoo">Gentoo</a></h3>
 <p><a href="https://github.com/vinegarhq/ebuild"><img src="https://img.shields.io/badge/Gentoo-ebuild-6e56af?style=flat-square" alt="Gentoo Package" /></a></p>
-<p>Firstly, make sure the repository module for eselect is installed:</p>
-<pre><code class="language-console"># emerge app-eselect/eselect-repository
+<p>Firstly, make sure the repository module for eselect and git are both installed:</p>
+<pre><code class="language-console"># emerge app-eselect/eselect-repository dev-vcs/git
 </code></pre>
 <p>Then you will need to add the Vinegar overlay:</p>
 <pre><code class="language-console"># eselect repository add &quot;vinegar&quot; git https://github.com/vinegarhq/ebuild.git
