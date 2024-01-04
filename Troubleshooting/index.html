@@ -207,6 +207,11 @@
 <p>Although this normally doesn't happen, the wineserver might continue running in certain cases. Using the <code>vinegar kill</code> command should stop it.</p>
 <h3 id="no-roblox-desktop-entriesshortcuts"><a class="header" href="#no-roblox-desktop-entriesshortcuts">No Roblox desktop entries/shortcuts</a></h3>
 <p>This issue has no known cause, but appears to be more frequent with the Vinegar Flatpak. Rebooting your system should fix it.</p>
+<h3 id="roblox-doesnt-launch-from-the-website"><a class="header" href="#roblox-doesnt-launch-from-the-website">Roblox doesn't launch from the website</a></h3>
+<p>This issue is most likely caused by Vinegar failing to configure the mimelist entries. This can be fixed by manually adding them.
+First, remove any Roblox related lines in <code>~/.config/mimeapps.list</code>, then, under the <code>[Default Applications]</code> section add the lines found at the end of <a href="https://vinegarhq.org/Installation/guides/source.html#installing-vinegar">this</a> chapter.</p>
+<h3 id="vinegar-doesnt-launch-if-using-an-nvidia-gpu-with-wayland"><a class="header" href="#vinegar-doesnt-launch-if-using-an-nvidia-gpu-with-wayland">Vinegar doesn't launch if using an Nvidia GPU with Wayland</a></h3>
+<p>This issue can be fixed by switching to X11 or by disabling the Vinegar splash, instructions on how to do so can be found <a href="https://vinegarhq.org/Configuration/index.html#splash-configuration">here</a></p>
 <h3 id="stuttering-and-freezing-nvidia-gpu"><a class="header" href="#stuttering-and-freezing-nvidia-gpu">Stuttering and freezing (Nvidia GPU)</a></h3>
 <p>Although stuttering can happen for many different reasons, it's a very common issue on certain Nvidia cards. It seems that Nvidia's drivers on Wayland have major issues with stuttering and unexplainable frame locking in certain systems, but only if the window is fullscreen. This issue has been confirmed to exist for configurations where the Nvidia GPU drives the display and ones where PRIME offload is used (IGPU drives the display, DGPU renders the game).</p>
 <p>There's no known fix (as of October 14th, 2023), but the following workarounds might help depending on the system:</p>
