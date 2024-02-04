@@ -187,11 +187,9 @@
 <h2 id="disabling-split-lock-detection"><a class="header" href="#disabling-split-lock-detection">Disabling Split Lock Detection</a></h2>
 <p>Currently, Roblox uses split lock operations. Unfortunately, <a href="https://lwn.net/Articles/790464/">this is not considered a good practice</a>, so by default, the Linux Kernel will throttle any programs that do so. This has been reported to have a major performance hit, sometimes reducing Roblox's frame rate to a mere fraction of what it's supposed to be.</p>
 <p>Fortunately, you can disable the throttling by setting the <a href="https://docs.kernel.org/admin-guide/sysctl/kernel.html#split-lock-mitigate-x86-only"><code>kernel.split_lock_mitigate</code> parameter</a> to <code>0</code>.</p>
-<ul>
-<li>Newer gamemode releases (1.8+) can be configured to automatically disable split lock mitigations while a game is running. For more details, <a href="https://github.com/FeralInteractive/gamemode/blob/master/README.md#configuration">check Gamemode's README</a>.</li>
-<li>Alternatively, you can create a <code>sysctl.d</code> config file to set this parameter during boot.<br />
-Run <code>echo kernel.split_lock_mitigate=0 | sudo tee /etc/sysctl.d/99-splitlock.conf</code> in your terminal, then reboot your machine to apply the changes.</li>
-</ul>
+<p>Newer gamemode releases (1.8+) can be configured to automatically disable split lock mitigations while a game is running. For more details, <a href="https://github.com/FeralInteractive/gamemode/blob/master/README.md#configuration">check Gamemode's README</a>.</p>
+<p>Alternatively, you can create a <code>sysctl.d</code> config file to set this parameter during boot.<br />
+Run <code>echo kernel.split_lock_mitigate=0 | sudo tee /etc/sysctl.d/99-splitlock.conf</code> in your terminal, then reboot your machine to apply the changes.</p>
 <hr />
 <h2 id="general-issues"><a class="header" href="#general-issues">General Issues</a></h2>
 <p>Known Vinegar issues which affect both Roblox Player and Roblox Studio:</p>
