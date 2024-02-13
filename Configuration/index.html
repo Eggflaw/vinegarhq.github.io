@@ -187,8 +187,6 @@
 <p>If getting an error about an <code>EDITOR</code> variable, this can be temporarily fixed by running the command as <code>export EDITOR=nano; vinegar edit</code> (which will cause the <code>nano</code> editor to be used). Though, it is preferrable to set an <code>EDITOR</code> variable permanently, in a place like <code>.bashrc</code>.</p>
 <h2 id="configuration-values"><a class="header" href="#configuration-values">Configuration Values</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Description</th><th>Default</th></tr></thead><tbody>
-<tr><td><code>wineroot</code></td><td>the path to a valid Wine 'root' installation directory.</td><td>none</td></tr>
-<tr><td><code>dxvk_version</code></td><td>the DXVK version to be used; this can be set to legacy DXVK for old GPUs that don't support modern Vulkan.</td><td><code>&quot;2.3&quot;</code></td></tr>
 <tr><td><code>multiple_instances</code></td><td>allow for multiple instances of Roblox to be running simultaneously; requires setting <code>WINEESYNC</code> to <code>&quot;0&quot;</code>.</td><td><code>false</code></td></tr>
 <tr><td><code>sanitize_env</code></td><td>sanitize the global environment, hand-picked variables are allowed through.</td><td><code>false</code></td></tr>
 </tbody></table>
@@ -204,6 +202,8 @@
 <h3 id="binary-configuration"><a class="header" href="#binary-configuration">Binary Configuration</a></h3>
 <p>This section are the available options for the Studio and Player configurations, they are specified under their sections as listed above.</p>
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead><tbody>
+<tr><td><code>dxvk_version</code></td><td>the DXVK version to be used; this can be set to legacy DXVK for old GPUs that don't support modern Vulkan.</td><td><code>&quot;2.3&quot;</code></td></tr>
+<tr><td><code>wineroot</code></td><td>the path to a valid Wine 'root' installation directory.</td><td>none</td></tr>
 <tr><td><code>channel</code></td><td>the deployment channel to be used; <strong>DO NOT CHANGE, ONLY KEPT FOR DEVELOPERS</strong></td><td><code>&quot;LIVE&quot;</code></td></tr>
 <tr><td><code>launcher</code></td><td>the program that is used to launch Wine when launching Roblox; this can be set to <code>gamemoderun</code>.</td><td>none</td></tr>
 <tr><td><code>renderer</code></td><td>selects the rendering engine to be used by Roblox via FFlags.</td><td><code>&quot;D3D11&quot;</code></td></tr>
@@ -258,12 +258,11 @@ when using DXVK, ensure that the renderer is <code>&quot;D3D11&quot;</code>, oth
 </blockquote>
 <pre><code class="language-toml"># DO NOT COPY, USE ONLY AS EXAMPLE
 
-wineroot = &quot;/home/meow/wine-ge&quot;
-
 [env]
 WINEFSYNC = &quot;1&quot;
 
 [player]
+wineroot = &quot;/home/meow/wine-ge&quot;
 launcher = &quot;gamemoderun&quot;
 dxvk = false
 renderer = &quot;Vulkan&quot;
