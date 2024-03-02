@@ -203,8 +203,8 @@ a temporary solution is to disable DXVK and use Vulkan instead.</p>
 <h3 id="white-screen"><a class="header" href="#white-screen">White Screen</a></h3>
 <p>Usually, this is a sign of missing graphics libraries which Wine depends on to work. Check <a href="https://github.com/lutris/docs/blob/master/InstallingDrivers.md">Lutris Docs: Installing Drivers</a> out for instructions on how to install them.</p>
 <p>This may also indicate that your GPU doesn't meet the minimum Vulkan requirements; Use the OpenGL renderer, or set the installed DXVK version to one which includes a legacy version of Vulkan supported by your GPU.</p>
-<h3 id="stale-wineserver"><a class="header" href="#stale-wineserver">Stale wineserver</a></h3>
-<p>Although this normally doesn't happen, the wineserver might continue running in certain cases. Using the <code>vinegar kill</code> command should stop it.</p>
+<h3 id="failed-to-open-esync-shared-memory-file"><a class="header" href="#failed-to-open-esync-shared-memory-file">Failed to open esync shared memory file</a></h3>
+<p>Although this normally doesn't happen, the wineserver process might continue running in certain cases. Simply restarting your computer is the easiest option as it doesn't involve the use of the terminal. Another option is to use the <code>vinegar kill</code> or <code>flatpak run org.vinegarhq.Vinegar kill</code> command. If you keep getting this error even after killing wineserver you could try to <a href="https://vinegarhq.org/Configuration/index.html">disable esync</a>.</p>
 <h3 id="roblox-fails-to-install"><a class="header" href="#roblox-fails-to-install">Roblox fails to install</a></h3>
 <p>To fix this issue just relaunch Vinegar, if the problem persists it could be an internet connection related issue.</p>
 <h3 id="no-roblox-desktop-entriesshortcuts"><a class="header" href="#no-roblox-desktop-entriesshortcuts">No Roblox desktop entries/shortcuts</a></h3>
